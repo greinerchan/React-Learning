@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import {ReactComponent as Logo} from '../../assets/crown.svg';
+import { connect } from 'react-redux'; // higher order component to let us to access redux, function take component as arguments, return a new souped up compinenent
 
 import {auth} from '../../firebase/firebase.utils';
 
@@ -32,4 +33,7 @@ const header = ({ currentUser }) => (
     </div>
 )
 
-export default header;
+const mapStateToProps = state => ({
+    currentUser: state.user.currentUser
+});
+export default connect(mapStateToProps)(header);
