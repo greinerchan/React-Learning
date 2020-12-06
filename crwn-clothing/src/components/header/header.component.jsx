@@ -40,6 +40,12 @@ const header = ({ currentUser, hidden }) => (
     </div>
 )
 
+
+// const mapStateToProps = state => ({
+//     currentUser: state.user.currentUser
+// });
+
+// destructure the user and cart
 const mapStateToProps = ({user: {currentUser}, cart: { hidden }}) => ({
     currentUser,
     hidden
